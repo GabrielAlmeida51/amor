@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosso Amor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #ffe6e6, #ffcccc);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #b30059;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2.5em;
+    }
+
+    /* Foto menor e centralizada */
+    .photo-container {
+      margin: 20px;
+      border: 5px solid #ffb3b3;
+      border-radius: 20px;
+      overflow: hidden;
+      /* define largura fixa para a foto */
+      width: 300px;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .text {
+      font-size: 1.2em;
+      margin: 20px;
+      max-width: 700px;
+    }
+
+    .timer {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 20px;
+      background-color: #ffccd5;
+      padding: 15px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 153, 204, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>EU TE AMO AMOR 💘</h1>
+
+  <!-- Espaço para sua imagem com ela -->
+  <div class="photo-container">
+    <img src="Image (1).jfif" alt="Nossa foto juntos">
+  </div>
+
+  <!-- Texto romântico pesquisado -->
+  <div class="text">
+    <p>
+      Amor ja são 6 meses de nós, creio eu que nossos destinos ja estavam traçados desde o primeiro beijo,<br>
+      todo segundo, mês e ano em que eu passo ao seu lado eu me sinto mais vivo, você abriu uma porta no meu coração que eu nunca achava que seria aberta, que se chama amor!!!<br>
+      
+
+    </p>
+  </div>
+
+  <!-- Contador de tempo -->
+  <div class="timer" id="tempoJuntos">
+    Estamos juntos há...
+  </div>
+
+  <script>
+    function atualizarTempo() {
+      const inicio = new Date("2024-11-01T00:00:00");
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("tempoJuntos").innerText =
+        `Estamos juntos há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos 💖`;
+    }
+
+    setInterval(atualizarTempo, 1000);
+    atualizarTempo();
+  </script>
+
+</body>
+</html>
